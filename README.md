@@ -5,4 +5,5 @@ This software can provide control of the usage of an electronic device, preferab
 
 - Mouse emulation through a simple interruptor.
 
+Thi will be an open source project
 
