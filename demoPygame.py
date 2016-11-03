@@ -1,10 +1,10 @@
-import pyautogui
+#import pyautogui
 import pygame
 
 pygame.init()
 
 # ancho y altura de la pantalla
-width, height = pyautogui.size()
+#width, height = pyautogui.size()
 
 gameDisplay= pygame.display.set_mode((800,600))
 pygame.display.set_caption('Demo')
@@ -31,9 +31,10 @@ while not gameExit:
 		if event.type == pygame.KEYDOWN: 
 			if event.type == pygame.K_LEFT:
 				#...
+				print 'Left'
 			if event.type == pygame.K_RIGHT:
 				#...
-
+				print 'right'
 	pygame.draw.line(gameDisplay, RED, (45,20), (45,30), 4)
 	pygame.display.update()
 
