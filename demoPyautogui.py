@@ -3,13 +3,15 @@ import pygame, sys, os
 
 pygame.init()
 
-# ancho y altura de la pantalla
+# width and height of the user window
 width, height = pyautogui.size()
 
 gameExit= False
 
 pyautogui.FAILSAFE = True
 
+# Black window to do the demo
+# We want to make this clear for the final version
 pygame.display.gl_set_attribute(pygame.GL_ALPHA_SIZE,8)
 gameDisplay= pygame.display.set_mode((900,900)) #pygame.NOFRAME
 pygame.display.set_caption('Demo')
