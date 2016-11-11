@@ -1,4 +1,4 @@
-# assistive-technology
+# Cross Scanner
 We are working with the Program of Assistive Technology of Puerto Rico [(PRATP)] (http://pratp.upr.edu/) to create an open source software for people with disabilities that only have one control point.
 
 This software can provide control of the usage of an electronic device, preferably a computer or laptop, to a person who might have more difficulty accessing these devices.
