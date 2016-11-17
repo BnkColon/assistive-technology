@@ -1,9 +1,11 @@
 import pyautogui
 from pynput.mouse import Listener, Button
 
+pyautogui.FAILSAFE = False 
 
 # ancho y altura de la pantalla
 width, height = pyautogui.size()
+#print (width, height)
 
 # coordenadas para el click
 pos_x = 0
@@ -32,22 +34,9 @@ def on_clickY(x, y, button, pressed):
 
 while not exit:
 	while not click:
-		# cursor se mueve horizontalmente
-		for x in range(0, width, 10):
-			pyautogui.moveTo(x, height/2, duration= .01) 
-
-			listener = Listener(on_click= on_clickX)
-			listener.start()
-
-			#print(pos_x)
-
-			if pos_x != 0:
-			listener.stop()
-			break
-
 		# cursor se mueve verticalmente
 		for y in range(0, height, 10):
-			pyautogui.moveTo(pos_x, y, duration= .01)
+			pyautogui.moveTo(width/2, y, duration= .01)
 
 			listener = Listener(on_click= on_clickY)
 			listener.start()
@@ -55,10 +44,24 @@ while not exit:
 			#print(pos_y)
 
 			if pos_y != 0:
-			listener.stop()
-			break
+				listener.stop()
+				break
 
-			click= True
+		# cursor se mueve horizontalmente
+		for x in range(0, width, 10):
+			print(x)
+			pyautogui.moveTo(x, pos_y, duration= .01) 
+
+			listener = Listener(on_click= on_clickX)
+			listener.start()
+
+			print(pos_x)
+
+			if pos_x != 0:
+				listener.stop()
+				break
+
+		click= True
   
 
 	#click en pos_x y pos_y
@@ -66,3 +69,5 @@ while not exit:
 	pyautogui.doubleClick(pos_x, pos_y)
 	exit= True
 	print("x = %d, y = %d" %(pos_x, pos_y))
+
+	
