@@ -4,7 +4,7 @@ We are working with the Program of Assistive Technology of Puerto Rico [(PRATP)]
 This software can provide control of the usage of an electronic device, preferably a computer or laptop, to a person who might have more difficulty accessing these devices.
 
 - Mouse emulation through a simple interruptor.
-
+- For Windows and Mac users
 
 # Licenses 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
