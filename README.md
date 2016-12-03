@@ -6,14 +6,15 @@ This software can provide control of the usage of an electronic device, preferab
 - Mouse emulation through a simple interruptor.
 - For Windows and Mac users
 
+# Who can use it
+
 # How it works
 
 # How to use it 
 
-# Who can use it
-
 # Need external devices?
 
+# Code Descrition
 
 # Licenses 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
