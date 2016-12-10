@@ -6,6 +6,8 @@ This software can provide control of the usage of an electronic device, preferab
 - Mouse emulation through a simple interruptor.
 - For Windows and Mac users
 
+# What they asked for
+
 # Who can use it
 
 # How it works
