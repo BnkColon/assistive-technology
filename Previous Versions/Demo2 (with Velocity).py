@@ -5,17 +5,28 @@ from tkinter import *
 pyautogui.FAILSAFE = False 
 
 global VelocityVar
+global AcelerationVar
 
 def sel(self):
   global VelocityVar
   VelocityVar = var.get()
 
+#def sel2(self):
+#  global AcelerationVar
+#  AcelerationVar = var2.get()
+
+
 #GUI
 root = Tk()
 var = IntVar()
 
-scale = Scale( root, variable = var, from_= 1, to= 10, orient= HORIZONTAL, label = "velocity", command = sel)
+#escala de velocidad
+scale = Scale( root, variable = var, from_= 1, to= 5, orient= HORIZONTAL, label = "velocidad", command = sel)
 scale.pack(anchor=CENTER)
+
+#escala de aceleracion
+#scale = Scale( root, variable = var2, from_= 1, to= 5, orient= HORIZONTAL, label = "aceleracion", command = sel2)
+#scale.pack(anchor=CENTER)
 
 label = Label(root)
 label.pack()
@@ -36,25 +47,31 @@ click= False
 
 exit= False
 
-velocities = [(0,.25), (0,.10), (0,.1), (5,.25), (5,.10), (5,.1), (10,.25), (10,.10), (10,.1), (15,.10), (15,.1)]
+#mientras mas grande la parte entera, mas rapido
+#mientras mas pequena la parte decimal, mas rapido
+#velocities =  [(5,.15), (5,.10), (5,.01), (10,.15), (10,.10), (10,.01), (15,.15), (15,.01), (20,.15), (20,.01)]
+velocities = [(10,.10), (12,.10), (15,.10), (17,.10), (20,.10)]
 speedInput= 0
+
+#lista de aceleractiones
+#acelerations = [1,2,3,4,5]
 
 
 def velocity(x):
-  print (" v", velocities)
-  print (" x", x)
-  print ("val: " , velocities[x])
-  val = velocities[x]
+  #print (" v", velocities)
+  #print (" x", x)
+  #print ("val: " , velocities[x-1])
+  val = velocities[x-1]
   jump = val[0]
   duration = float(val[1])
-  print("duration, jump, val:", duration, jump, val)
+  #print("duration, jump, val:", duration, jump, val)
   return jump, duration
 
 #variables
 #velocity
-print (" VV", VelocityVar)
+#print (" VV", VelocityVar)
 jump, duration = velocity(VelocityVar)
-print("jump = %d, duration = %d" %(jump, duration))
+#print("jump, duration", jump, duration)
 
   #bar?
 #click is
@@ -80,6 +97,8 @@ def on_clickY(x, y, button, pressed):
 while not exit:
   while not click:
     # cursor se mueve verticalmente
+    if(jump == 0):
+      jump = 1
     for y in range(0, height, jump):
       pyautogui.moveTo(width/2, y, duration= duration)
 
@@ -99,7 +118,7 @@ while not exit:
       listener = Listener(on_click= on_clickX)
       listener.start()
 
-      print(pos_x)
+      #print(pos_x)
 
       if pos_x != 0:
         listener.stop()
@@ -112,5 +131,5 @@ while not exit:
   pyautogui.doubleClick(pos_x, pos_y)
   pyautogui.doubleClick(pos_x, pos_y)
   exit= True
-  print("x = %d, y = %d" %(pos_x, pos_y))
+  #print("x = %d, y = %d" %(pos_x, pos_y))
 

@@ -1,22 +1,10 @@
 # Cross Scanner
-We are working with the Program of Assistive Technology of Puerto Rico [(PRATP)] (http://pratp.upr.edu/) to create an open source software for people with disabilities that only have one control point.
+We are working with the Program of Assistive Technology of Puerto Rico [(PRATP)] (http://pratp.upr.edu/) to create an open source software for people with disabilities that only have point of control.
 
-This software can provide control of the usage of an electronic device, preferably a computer or laptop, to a person who might have more difficulty accessing these devices.
+This software can provide control of the usage of a computer or laptop, to a person who might have more difficulty using these devices.
 
 - Mouse emulation through a simple interruptor.
-- For Windows and Mac users
 
-# What they asked for
-
-# Who can use it
-
-# How it works
-
-# How to use it 
-
-# Need external devices?
-
-# Code Descrition
 
 # Licenses 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
