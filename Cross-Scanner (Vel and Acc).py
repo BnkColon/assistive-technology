@@ -125,7 +125,6 @@ def on_clickY(x, y, button, pressed):
 # funcion para determinar la direccion vertical del escaner (hacia arriba o abajo)
 def on_click_Vertical(x, y, button, pressed):
 	if button == ButtonPynput.left:
-		print("vertical")
 		global down
 		down = True
 	elif button == ButtonPynput.right:
@@ -136,7 +135,6 @@ def on_click_Vertical(x, y, button, pressed):
 # funcion para determinar la direccion horizontal del escaner (hacia la derecha o izquierda)
 def on_click_Horizontal(x, y, button, pressed):
 	if button == ButtonPynput.left:
-		print("horizontal")
 		global right
 		right = True
 
@@ -193,14 +191,12 @@ jump = jump1
 # main
 while not exit:
 	while not click:
-
 		while start:
 			# mueve el cursor al medio de la pantalla
 			pyautogui.moveTo(width/2, height/2)
 
 			# registra los clicks
 			listener = Listener(on_click= on_click_Vertical)
-			print("despues del listenerV")
 			listener.start()
 
 			if down == True:
@@ -209,7 +205,7 @@ while not exit:
 				itere = 0
 
 				while(y <= height):
-					print("down")
+					# print("down")
 					y += jump
 
 					#aplicar la aceleracion (de la seleccion del GUI)
@@ -261,7 +257,6 @@ while not exit:
 
 			# registra los clicks
 			listener = Listener(on_click= on_click_Horizontal)
-			print("despues del listenerH")
 			listener.start()
 
 			if right == True :
@@ -330,7 +325,4 @@ while not exit:
 	#click en pos_x y pos_y
 	pyautogui.doubleClick(pos_x, pos_y)
 	pyautogui.doubleClick(pos_x, pos_y)
-	print("click")
-
-	reset()
-	print(click, start, finish, down, up, right, left, pos_x, pos_y)
+	exit= True
